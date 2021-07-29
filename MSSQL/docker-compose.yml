@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server
+    container_name: mssql
+    volumes:
+      - dbdata:/var/opt/mssql
+    environment:
+      - SA_PASSWORD=yourStrong(!)Password
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+
+volumes:
+  dbdata:

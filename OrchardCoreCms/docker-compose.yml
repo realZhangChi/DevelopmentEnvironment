@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  
+  orchardcms:
+    image: orchardproject/orchardcore-cms-linux:latest
+    container_name: orchardcms
+    restart: always
+    ports:
+      - "5003:80"
+    volumes:
+      - orchardcmsdata:/app/App_Data
+
+volumes:
+  orchardcmsdata:
