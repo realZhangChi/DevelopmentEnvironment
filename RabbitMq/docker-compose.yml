@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+
+  sqlserver:
+    image: rabbitmq:latest
+    container_name: rabbitmq
+    restart: always
+    volumes:
+      - ./enabled_plugins/:/etc/rabbitmq/enabled_plugins/
+      - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+    ports:
+      - "5672:5672"
+      - "15672:15672"
