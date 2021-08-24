@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+
+  nocodb:
+    image: nocodb/nocodb
+    container_name: nocodb
+    volumes:
+      - nocodbdata:/usr/app/data/
+    ports:
+      - "8080:8080"
+
+volumes:
+  nocodbdata:
